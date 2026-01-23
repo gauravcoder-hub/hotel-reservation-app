@@ -244,5 +244,3 @@ For questions or support, please contact:
 - **Phone:** +91-7903562598
 
 ---
-
-**⭐ Star this repository if you found it helpful!**
