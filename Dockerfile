@@ -1,42 +1,32 @@
-FROM php:8.4-apache
-
-WORKDIR /var/www/html
+# Use official PHP image with required extensions
+FROM php:8.2-apache
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
-    git \
-    unzip \
-    zip \
-    curl \
-    nodejs \
-    npm \
-    sqlite3 \
-    libsqlite3-dev \
-    && docker-php-ext-install pdo pdo_sqlite \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    libzip-dev zip unzip git curl
 
-# Enable Apache rewrite
+# Install PHP extensions
+RUN docker-php-ext-install pdo_mysql mysqli mbstring exif pcntl bcmath gd
+
+# Enable Apache mod_rewrite
 RUN a2enmod rewrite
 
-# Set Apache public folder
-ENV APACHE_DOCUMENT_ROOT /var/www/html/public
-RUN sed -ri 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/*.conf
-
-# ---- Install Composer (OFFICIAL WAY) ----
-COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+# Set working directory
+WORKDIR /var/www/html
 
 # Copy project files
 COPY . .
 
-# Create SQLite database file
-RUN mkdir -p database \
-    && touch database/database.sqlite \
-    && chmod -R 775 database storage bootstrap/cache
+# Install Composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+RUN composer install --no-dev --optimize-autoloader
 
-# Install PHP & frontend dependencies
-RUN composer install --no-dev --optimize-autoloader \
-    && npm install \
-    && npm run build
+# Set permissions for Laravel storage and bootstrap/cache
+RUN chown -R www-data:www-data storage bootstrap/cache
+RUN chmod -R 775 storage bootstrap/cache
 
-EXPOSE 80
+# Expose port 10000
+EXPOSE 10000
+
+# Start Apache in foreground
+CMD ["apache2-foreground"]
