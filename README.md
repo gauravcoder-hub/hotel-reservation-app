@@ -4,7 +4,7 @@ A sophisticated hotel room booking system that intelligently allocates rooms bas
 
 ---
 
-## 📋 Table of Contents
+##  Table of Contents
 
 - [Overview](#overview)
 - [Features](#features)
@@ -13,7 +13,6 @@ A sophisticated hotel room booking system that intelligently allocates rooms bas
 - [Usage](#usage)
 - [Algorithm](#algorithm)
 - [Screenshots](#screenshots)
-- [Contact](#contact)
 
 ---
 
@@ -161,23 +160,28 @@ Total Time = (Horizontal Distance × 1 min) + (Vertical Distance × 2 min)
 ##  Screenshots
 
 ### Main Interface
-![Main Interface](public/assets/Screenshot 2026-01-23 at 14.50.36.png)
+![Main Interface](public/assets/main-interface.png)
 *Hotel layout with booking controls*
 
 ### Booking Success
-![Booking Success](public/assets/Screenshot 2026-01-23 at 14.52.20.png)
+![Booking Success](public/assets/booking-success.png)
 *Toast notification on successful booking*
 
 ### Random Occupancy
-![Random Occupancy](public/assets/Screenshot 2026-01-23 at 14.54.49.png)
-
+![Random Occupancy](public/assets/random-occupancy.png)
+*Simulated hotel occupancy for testing*
 
 ### Reset Booking
-![Reset Booking](public/assets/Screenshot 2026-01-23 at 14.53.55.png)
+![Reset Booking](public/assets/reset-booking.png)
+*Clear all bookings functionality*
 
 ### Hotel Layout Grid
-![Hotel Layout](public/assets/Screenshot 2026-01-23 at 15.00.01.png)
+![Hotel Layout](public/assets/hotel-layout.png)
 *Visual representation of room availability*
+
+### Mobile Responsive Layout 
+![Mobile Layout](public/assets/mobile-responsive.png)
+*Mobile friendly UI*
 
 ---
 
@@ -198,6 +202,7 @@ hotel-reservation-system/
 ├── routes/
 │   └── web.php
 ├── public/
+│   └── assets/
 └── README.md
 ```
 
@@ -225,3 +230,19 @@ hotel-reservation-system/
 - Real-time UI updates with toast notifications
 
 ---
+
+##  License
+
+This project is open-source and available under the MIT License.
+
+---
+
+##  Contact
+
+For questions or support, please contact:
+- **Email:** gauravsbs2@gmail.com
+- **Phone:** +91-7903562598
+
+---
+
+**⭐ Star this repository if you found it helpful!**
