@@ -231,15 +231,10 @@ hotel-reservation-system/
 
 ---
 
-##  License
-
-This project is open-source and available under the MIT License.
-
----
 
 ##  Contact
 
-For questions or support, please contact:
+For questions or any query, please contact:
 - **Email:** gauravsbs2@gmail.com
 - **Phone:** +91-7903562598
 
