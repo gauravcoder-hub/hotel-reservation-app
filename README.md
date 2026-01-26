@@ -113,7 +113,7 @@ This system manages a hotel with **97 rooms** distributed across **10 floors**, 
 
 ### Booking Rooms
 
-1. Enter the number of rooms (1-5) in the input field
+1. Choose the number of rooms using + / − controls (1–5)
 2. Click the **"Book Rooms"** button
 3. The system will allocate rooms based on:
    - Same-floor availability (priority)
@@ -121,12 +121,12 @@ This system manages a hotel with **97 rooms** distributed across **10 floors**, 
 
 ### Random Occupancy
 
-- Click **"Generate Random Occupancy"** to simulate hotel bookings
+- Click **"Random "** to simulate hotel bookings
 - Useful for testing the booking algorithm with various scenarios
 
 ### Reset Bookings
 
-- Click **"Reset All Bookings"** to clear all room reservations
+- Click **"Reset"** to clear all room reservations
 - Returns the hotel to a fully available state
 
 ---
